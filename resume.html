@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Résumé – Blake Munk</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #f4efe5;
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      background-repeat: repeat;
+      color: #4a3a28;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: #8a4b23;
+      color: white;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px 18px;
+      box-sizing: border-box;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 18px;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 18px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 9px 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar small {
+      display: block;
+      margin-top: 28px;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .main-panel {
+      width: 100%;
+      max-width: 980px;
+      background: #fffaf2;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 32px 40px 40px 40px;
+      box-sizing: border-box;
+      border: 1px solid #e1c7a4;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #8a4b23;
+      margin-bottom: 4px;
+    }
+
+    .contact-line {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-line a {
+      color: #8a4b23;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    h2.section-heading {
+      font-size: 1.4rem;
+      color: #8a4b23;
+      margin-top: 26px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #d9b88b;
+      padding-bottom: 4px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      color: #4a3a28;
+    }
+
+    .item-subline {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #6a4b33;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin-top: 4px;
+      padding-left: 20px;
+      font-size: 0.97rem;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+      <img src="assets/blake-headshot.jpg" class="profile-pic" alt="Blake Munk headshot">
+      <h2>BLAKE MUNK</h2>
+
+      <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="Resume.html">Résumé</a>
+        <a href="#experience">My Work</a>
+        <a href="scratch.html">Life on the Ranch</a>
+        <a href="game.html">Guessing Game</a>
+        <a href="scratch.html#tableau">Tableau Skills</a>
+      </div>
+
+      <small>Pre-Business · Brigham Young University</small>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="main-panel">
+
+      <!-- HEADER -->
+      <section>
+        <h1>Blake Munk</h1>
+        <p class="contact-line">
+          208-615-1178 ·
+          <a href="mailto:bmunk33@gmail.com">bmunk33@gmail.com</a>
+        </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <h2 class="section-heading">Education</h2>
+
+        <div class="item-header">
+          <span>Brigham Young University</span>
+          <span>Provo, UT</span>
+        </div>
+        <div class="item-subline">
+          Pre-Business Major · Expected Graduation 2027
+        </div>
+
+        <div class="item-header" style="margin-top:10px;">
+          <span>Rocky Mountain High School</span>
+          <span>Meridian, ID</span>
+        </div>
+        <div class="item-subline">
+          High School Diploma
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h2 class="section-heading">Experience</h2>
+
+        <!-- Ranch Hand -->
+        <div class="item-header">
+          <span>Ranch Hand – Deep Creek Beef</span>
+          <span>Idaho</span>
+        </div>
+        <div class="item-subline">
+          Family Ranch · Ongoing Seasonal Work
+        </div>
+        <ul>
+          <li>Cared for cattle, checked herd health, and supported daily ranch operations.</li>
+          <li>Built and repaired fencing, worked cattle on horseback, and maintained equipment.</li>
+          <li>Helped implement regenerative grazing practices to protect soil and pasture health.</li>
+          <li>Gained strong work ethic, problem-solving skills, and comfort with physical labor.</li>
+        </ul>
+
+        <!-- Vivint -->
+        <div class="item-header" style="margin-top:14px;">
+          <span>Technician – Vivint Smart Home</span>
+          <span>Alaska</span>
+        </div>
+        <div class="item-subline">
+          Summer Position
+        </div>
+        <ul>
+          <li>Installed residential security systems and smart home devices in customer homes.</li>
+          <li>Worked in diverse environments while troubleshooting technical and wiring issues.</li>
+          <li>Communicated clearly with customers and provided basic training on systems.</li>
+        </ul>
+
+        <!-- Mission -->
+        <div class="item-header" style="margin-top:14px;">
+          <span>Volunteer Missionary</span>
+          <span>Las Vegas, NV</span>
+        </div>
+        <div class="item-subline">
+          The Church of Jesus Christ of Latter-day Saints · Spanish-Speaking · 2 Years
+        </div>
+        <ul>
+          <li>Served full-time in teaching, service, and outreach in Spanish and English.</li>
+          <li>Developed leadership, time management, and communication skills.</li>
+          <li>Adapted to new areas, schedules, and responsibilities while working with many people.</li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section>
+        <h2 class="section-heading">Skills</h2>
+        <ul>
+          <li>Hardworking, dependable, and self-motivated.</li>
+          <li>Hands-on problem solver, comfortable with physical work and outdoor environments.</li>
+          <li>Strong interpersonal and people skills; able to work well on a team.</li>
+          <li>Conversational Spanish from two-year mission experience.</li>
+          <li>Basic experience with home security system installation and troubleshooting.</li>
+        </ul>
+      </section>
+
+      <!-- INTERESTS -->
+      <section>
+        <h2 class="section-heading">Interests</h2>
+        <ul>
+          <li>Ranching, cattle, and western lifestyle.</li>
+          <li>Hunting, fishing, and spending time outdoors.</li>
+          <li>Business, entrepreneurship, and learning how companies grow.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer style="
+    margin-top: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #c57b57; 
+    color: white;
+    font-family: Georgia, serif;
+    border-top: 6px solid #8a4b23;
+">
+    <h3 style="margin: 0 0 10px 0;">Blake Munk</h3>
+    <p style="margin: 0 0 15px 0; font-size: 1.1rem;">📞 208-615-1178</p>
+
+    <div style="margin-bottom: 5px;">
+        <a href="https://www.instagram.com/bmunk33/" target="_blank" 
+           style="margin-right: 15px; padding: 10px 18px; background: white; color: #c57b57; 
+                  border-radius: 999px; text-decoration: none; font-weight: bold; display:inline-block;">
+            📸 Instagram
+        </a>
+
+        <a href="https://www.facebook.com/blake.munk.1/" target="_blank"
+           style="padding: 10px 18px; background: white; color: #c57b57; 
+                  border-radius: 999px; text-decoration: none; font-weight: bold; display:inline-block;">
+            📘 Facebook
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>

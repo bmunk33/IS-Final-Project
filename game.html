@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Guessing Game – Blake Munk</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #f4efe5;
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      background-repeat: repeat;
+      color: #4a3a28;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: #8a4b23;
+      color: white;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px 18px;
+      box-sizing: border-box;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 18px;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 18px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 9px 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar small {
+      display: block;
+      margin-top: 28px;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .main-panel {
+      width: 100%;
+      max-width: 700px;
+      background: #fffaf2;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 32px 40px 40px 40px;
+      box-sizing: border-box;
+      border: 1px solid #e1c7a4;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #8a4b23;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #c8ac84;
+      width: 120px;
+      text-align: center;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-left: 8px;
+      border-radius: 6px;
+      border: none;
+      background-color: #8a4b23;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6f3918;
+    }
+
+    #message {
+      margin-top: 16px;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #c57b57; 
+      color: white;
+      font-family: Georgia, serif;
+      border-top: 6px solid #8a4b23;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+      <img src="assets/blake-headshot.jpg" class="profile-pic" alt="Blake Munk headshot">
+      <h2>BLAKE MUNK</h2>
+
+      <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="Resume.html">Résumé</a>
+        <a href="Resume.html#experience">My Work</a>
+        <a href="scratch.html">Life on the Ranch</a>
+        <a href="game.html">Guessing Game</a>
+        <a href="scratch.html#tableau">Tableau Skills</a>
+      </div>
+
+      <small>Pre-Business · Brigham Young University</small>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="main-panel">
+      <h1>Number Guessing Game</h1>
+      <p>
+        I’m thinking of a number between <strong>1 and 100</strong>.  
+        Try to guess it!
+      </p>
+
+      <div>
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Your guess">
+        <button onclick="makeGuess()">Guess</button>
+      </div>
+
+      <p id="message"></p>
+      <p id="attempts"></p>
+
+      <button onclick="resetGame()" style="margin-top: 10px; background-color:#c57b57;">
+        New Game
+      </button>
+
+      <div style="margin-top: 20px;">
+        <a href="index.html" style="color:#8a4b23; text-decoration:underline;">Back to Home</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <h3 style="margin: 0 0 10px 0;">Blake Munk</h3>
+    <p style="margin: 0 0 15px 0; font-size: 1.1rem;">📞 208-615-1178</p>
+    <div style="margin-bottom: 5px;">
+        <a href="https://www.instagram.com/bmunk33/" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com/blake.munk.1/" target="_blank">Facebook</a>
+    </div>
+</div>
+
+<script>
+  let secretNumber = Math.floor(Math.random() * 100) + 1;
+  let attempts = 0;
+
+  function makeGuess() {
+    const input = document.getElementById('guessInput');
+    const message = document.getElementById('message');
+    const attemptsText = document.getElementById('attempts');
+    const guess = Number(input.value);
+
+    if (!guess || guess < 1 || guess > 100) {
+      message.textContent = "Please enter a number between 1 and 100.";
+      message.style.color = "#8a4b23";
+      return;
+    }
+
+    attempts++;
+
+    if (guess < secretNumber) {
+      message.textContent = "Too low. Try again.";
+      message.style.color = "#8a4b23";
+    } else if (guess > secretNumber) {
+      message.textContent = "Too high. Try again.";
+      message.style.color = "#8a4b23";
+    } else {
+      message.textContent = "You got it! Great job.";
+      message.style.color = "green";
+    }
+
+    attemptsText.textContent = "Attempts: " + attempts;
+    input.value = "";
+    input.focus();
+  }
+
+  function resetGame() {
+    secretNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    document.getElementById('message').textContent = "";
+    document.getElementById('attempts').textContent = "";
+    document.getElementById('guessInput').value = "";
+    document.getElementById('guessInput').focus();
+  }
+</script>
+
+</body>
+</html>

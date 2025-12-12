@@ -1,0 +1,170 @@
+/* GLOBAL STYLES FOR MAIN PAGES (index, Resume, game) */
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #f6efe4;
+  color: #3b2914;
+}
+
+/* Layout with sidebar + main content */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* LEFT SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #8a4b23;
+  color: white;
+  min-height: 100vh;
+  text-align: center;
+  padding: 24px 18px;
+  box-sizing: border-box;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 18px;
+}
+
+.sidebar h2 {
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  margin-top: 20px;
+}
+
+.nav-links a {
+  display: block;
+  padding: 9px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.sidebar small {
+  display: block;
+  margin-top: 28px;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* MAIN CONTENT AREA */
+.main {
+  flex: 1;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-panel {
+  width: 100%;
+  max-width: 980px;
+  background: #fffaf2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 32px 40px 40px 40px;
+  box-sizing: border-box;
+  border: 1px solid #e1c7a4;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  color: #8a4b23;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #6a4b33;
+}
+
+/* Paragraphs and lists */
+p {
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+/* Small pill-style lists (for quick facts / skills) */
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill-list li {
+  background: #f4d9b5;
+  color: #5b3218;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid #e1b193;
+}
+
+/* Buttons and inputs (for guessing game) */
+input[type="number"] {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #c8ac84;
+  width: 120px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 16px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: #8a4b23;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6f3918;
+}
+
+/* FOOTER (shared across pages) */
+footer,
+.footer {
+  margin-top: 0;
+  padding: 20px;
+  text-align: center;
+  background-color: #c57b57;
+  color: white;
+  font-family: Georgia, serif;
+  border-top: 6px solid #8a4b23;
+}
+
+footer a,
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
